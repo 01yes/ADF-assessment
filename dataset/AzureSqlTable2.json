@@ -28,7 +28,10 @@
 		],
 		"typeProperties": {
 			"schema": "SQLSCHEMA",
-			"table": "RETAILTABLE"
+			"table": {
+				"value": "@dataset().new",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
