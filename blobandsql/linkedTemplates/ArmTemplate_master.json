@@ -1,0 +1,209 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "blobandsql"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
+		"AzureBlobStorage5_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage5'"
+		},
+		"CustomerRestService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'CustomerRestService1'"
+		},
+		"Datasetissue_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Datasetissue'"
+		},
+		"Productblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Productblob'"
+		},
+		"Productblobservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Productblobservice'"
+		},
+		"blobservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blobservice'"
+		},
+		"linkedService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linkedService1'"
+		},
+		"sqlservice_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sqlservice'"
+		},
+		"CustomerRestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://jsonplaceholder.typicode.com/users"
+		},
+		"CustomerRestService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Rest"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://jsonplaceholder.typicode.com/users"
+		},
+		"linkedService1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "retailmain-1.database.windows.net"
+		},
+		"linkedService1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Retaildb"
+		},
+		"linkedService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "rtlsql"
+		},
+		"sqlservice_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "retailmain-1.database.windows.net"
+		},
+		"sqlservice_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Retaildb"
+		},
+		"sqlservice_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "rtlsql"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "blobandsql_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
+					"AzureBlobStorage5_connectionString": {
+						"value": "[parameters('AzureBlobStorage5_connectionString')]"
+					},
+					"CustomerRestService1_password": {
+						"value": "[parameters('CustomerRestService1_password')]"
+					},
+					"Datasetissue_connectionString": {
+						"value": "[parameters('Datasetissue_connectionString')]"
+					},
+					"Productblob_connectionString": {
+						"value": "[parameters('Productblob_connectionString')]"
+					},
+					"Productblobservice_connectionString": {
+						"value": "[parameters('Productblobservice_connectionString')]"
+					},
+					"blobservice_connectionString": {
+						"value": "[parameters('blobservice_connectionString')]"
+					},
+					"linkedService1_password": {
+						"value": "[parameters('linkedService1_password')]"
+					},
+					"sqlservice_password": {
+						"value": "[parameters('sqlservice_password')]"
+					},
+					"CustomerRestService1_properties_typeProperties_url": {
+						"value": "[parameters('CustomerRestService1_properties_typeProperties_url')]"
+					},
+					"CustomerRestService1_properties_typeProperties_userName": {
+						"value": "[parameters('CustomerRestService1_properties_typeProperties_userName')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"linkedService1_properties_typeProperties_server": {
+						"value": "[parameters('linkedService1_properties_typeProperties_server')]"
+					},
+					"linkedService1_properties_typeProperties_database": {
+						"value": "[parameters('linkedService1_properties_typeProperties_database')]"
+					},
+					"linkedService1_properties_typeProperties_userName": {
+						"value": "[parameters('linkedService1_properties_typeProperties_userName')]"
+					},
+					"sqlservice_properties_typeProperties_server": {
+						"value": "[parameters('sqlservice_properties_typeProperties_server')]"
+					},
+					"sqlservice_properties_typeProperties_database": {
+						"value": "[parameters('sqlservice_properties_typeProperties_database')]"
+					},
+					"sqlservice_properties_typeProperties_userName": {
+						"value": "[parameters('sqlservice_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "blobandsql_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'blobandsql_ArmTemplate_0')]"
+			]
+		}
+	]
+}

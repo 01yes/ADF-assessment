@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "blobandsql"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage5_connectionString": {
+			"value": ""
+		},
+		"CustomerRestService1_password": {
+			"value": ""
+		},
+		"Datasetissue_connectionString": {
+			"value": ""
+		},
+		"Productblob_connectionString": {
+			"value": ""
+		},
+		"Productblobservice_connectionString": {
+			"value": ""
+		},
+		"blobservice_connectionString": {
+			"value": ""
+		},
+		"linkedService1_password": {
+			"value": ""
+		},
+		"sqlservice_password": {
+			"value": ""
+		},
+		"CustomerRestService1_properties_typeProperties_url": {
+			"value": " https://jsonplaceholder.typicode.com/users"
+		},
+		"CustomerRestService1_properties_typeProperties_userName": {
+			"value": "Rest"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://jsonplaceholder.typicode.com/users"
+		},
+		"linkedService1_properties_typeProperties_server": {
+			"value": "retailmain-1.database.windows.net"
+		},
+		"linkedService1_properties_typeProperties_database": {
+			"value": "Retaildb"
+		},
+		"linkedService1_properties_typeProperties_userName": {
+			"value": "rtlsql"
+		},
+		"sqlservice_properties_typeProperties_server": {
+			"value": "retailmain-1.database.windows.net"
+		},
+		"sqlservice_properties_typeProperties_database": {
+			"value": "Retaildb"
+		},
+		"sqlservice_properties_typeProperties_userName": {
+			"value": "rtlsql"
+		}
+	}
+}
