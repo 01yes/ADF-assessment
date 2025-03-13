@@ -9,9 +9,9 @@
 			"database": "db assessment",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
-			"authenticationType": "SQL",
+			"authenticationType": "Windows",
 			"userName": "AzureAD\\AbdulRahmanMA",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzMzVlNGViZi1mZTkyLTQzNTktODY0OC0yMGUwYmNjYWEzNTIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjZWJkOTVhMy1hMzM4LTRjN2EtODY1Ny02NjZkNmNhZGIyYTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "jobportalintruntime",
