@@ -5,12 +5,20 @@
 			"referenceName": "joblinkservice",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ITEM": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "Dateset - Country Region"
+			"schema": "",
+			"table": {
+				"value": "@dataset().ITEM",
+				"type": "Expression"
+			}
 		}
 	}
 }

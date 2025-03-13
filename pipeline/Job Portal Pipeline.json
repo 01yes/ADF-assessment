@@ -6,6 +6,8 @@
 			{
 				"name": "Copy data1",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -84,8 +86,92 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "MultiplecopyforallTables",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('tablenames')",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Copying all tables",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "SqlServerSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "SnowflakeV2Sink",
+									"importSettings": {
+										"type": "SnowflakeImportCopyCommand"
+									}
+								},
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "StagingLinkService",
+										"type": "LinkedServiceReference"
+									},
+									"path": "adfstagedcommandtempdata"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "Jobportal",
+									"type": "DatasetReference",
+									"parameters": {
+										"ITEM": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "SnowflakeJobPortLink",
+									"type": "DatasetReference",
+									"parameters": {
+										"tables": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
 			}
 		],
+		"variables": {
+			"tablenames": {
+				"type": "Array",
+				"defaultValue": [
+					"CUSTOMERS",
+					"COUNTRY_AND_REGION",
+					"PRODUCT",
+					"TRANSACTIONS"
+				]
+			}
+		},
 		"annotations": []
 	}
 }

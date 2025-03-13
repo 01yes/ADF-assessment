@@ -5,6 +5,11 @@
 			"referenceName": "SnowflakeJobPortalLinkService",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tables": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "SnowflakeV2Table",
 		"schema": [
@@ -19,17 +24,16 @@
 				"type": "VARCHAR"
 			},
 			{
-				"name": "LASTNAME",
-				"type": "VARCHAR"
-			},
-			{
 				"name": "REGION",
 				"type": "VARCHAR"
 			}
 		],
 		"typeProperties": {
 			"schema": "JOB_PORTAL_TRANFORMATION_SCHEMA",
-			"table": "COUNTRY_REGION"
+			"table": {
+				"value": "@dataset().tables",
+				"type": "Expression"
+			}
 		}
 	}
 }
