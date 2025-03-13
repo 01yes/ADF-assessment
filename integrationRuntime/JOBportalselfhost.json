@@ -1,0 +1,6 @@
+{
+	"name": "JOBportalselfhost",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
