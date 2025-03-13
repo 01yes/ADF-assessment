@@ -1,0 +1,6 @@
+{
+	"name": "JOBPORTALRUNTIME",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
