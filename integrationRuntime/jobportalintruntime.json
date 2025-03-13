@@ -1,0 +1,6 @@
+{
+	"name": "jobportalintruntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
